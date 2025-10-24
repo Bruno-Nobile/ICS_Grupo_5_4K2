@@ -1,0 +1,128 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e8fccf;
+  color: #134611;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: #134611;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #3da35d;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #134611;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #3da35d;
+}
+
+#resultado {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0fff0;
+  border-left: 4px solid #3da35d;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.edad-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.input-error {
+  border: 2px solid red;
+}
+.edad-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.precio-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #2e7d32; /* verde oscuro */
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-top: 15px;
+  }
+
+  #resultado {
+    font-size: 0.95rem;
+  }
+}

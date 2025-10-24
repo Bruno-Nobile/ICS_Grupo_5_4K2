@@ -1,6 +1,11 @@
 import pytest
 from datetime import date, timedelta
-from parque_aventura import Usuario, Compra
+from backend.parque_aventura import Usuario, Compra
+
+from fastapi.testclient import TestClient
+from backend.main import app
+client = TestClient(app)
+
 
 # Se simula un usuario con sesión iniciada y registrado
 
@@ -23,7 +28,7 @@ def usuario_no_registrado():
 
 def test_compra_exitosa_tarjeta(usuario_registrado):
     """Compra válida con tarjeta (Mercado Pago)"""
-    fecha = date.today() + timedelta(days=2)  # Una fecha futura válida
+    fecha = date.today() + timedelta(days=3)  # Una fecha futura válida
     compra = Compra(usuario_registrado, fecha, 2, [
                     25, 30], "regular", "tarjeta")
     resultado = compra.procesar()
@@ -33,7 +38,7 @@ def test_compra_exitosa_tarjeta(usuario_registrado):
 
 def test_compra_sin_forma_pago(usuario_registrado):
     """Falla sin forma de pago"""
-    fecha = date.today() + timedelta(days=2)
+    fecha = date.today() + timedelta(days=3)
     compra = Compra(usuario_registrado, fecha, 2, [25, 30], "VIP", None)
     resultado = compra.procesar()
     assert resultado["ok"] is False
@@ -90,7 +95,7 @@ def test_compra_sin_edades(usuario_registrado):
 
 def test_compra_pago_efectivo(usuario_registrado):
     """Pago en boletería válido"""
-    fecha = date.today() + timedelta(days=2)
+    fecha = date.today() + timedelta(days=3)
     compra = Compra(usuario_registrado, fecha, 2, [
                     18, 22], "regular", "efectivo")
     resultado = compra.procesar()
@@ -100,7 +105,7 @@ def test_compra_pago_efectivo(usuario_registrado):
 
 def test_compra_tipo_vip(usuario_registrado):
     """Pase VIP válido"""
-    fecha = date.today() + timedelta(days=2)
+    fecha = date.today() + timedelta(days=3)
     compra = Compra(usuario_registrado, fecha, 2, [18, 22], "VIP", "tarjeta")
     resultado = compra.procesar()
     monto_esperado = 2 * 15000  # 2 entradas VIP
@@ -153,7 +158,7 @@ def test_compra_fecha_pasada_falla(usuario_registrado):
 
 def test_compra_cantidad_limite_inferior_valida(usuario_registrado):
     """Prueba que se pueda comprar exactamente 1 entrada."""
-    fecha = date.today() + timedelta(days=2)
+    fecha = date.today() + timedelta(days=3)
     compra = Compra(usuario_registrado, fecha, 1, [40], "VIP", "tarjeta")
     resultado = compra.procesar()
     assert resultado["ok"] is True
@@ -161,7 +166,7 @@ def test_compra_cantidad_limite_inferior_valida(usuario_registrado):
 
 def test_compra_cantidad_limite_superior_valida(usuario_registrado):
     """Prueba que se puedan comprar exactamente 10 entradas."""
-    fecha = date.today() + timedelta(days=2)
+    fecha = date.today() + timedelta(days=3)
     edades = [25] * 10
     compra = Compra(usuario_registrado, fecha, 10,
                     edades, "regular", "efectivo")
@@ -171,8 +176,9 @@ def test_compra_cantidad_limite_superior_valida(usuario_registrado):
 
 def test_compra_cantidad_cero_falla(usuario_registrado):
     """Prueba que no se puedan comprar 0 entradas."""
-    fecha = date.today() + timedelta(days=2)
+    fecha = date.today() + timedelta(days=3)
     compra = Compra(usuario_registrado, fecha, 0, [], "regular", "tarjeta")
     resultado = compra.procesar()
     assert resultado["ok"] is False
     assert "Cantidad de entradas inválida" in resultado["mensaje"]
+
