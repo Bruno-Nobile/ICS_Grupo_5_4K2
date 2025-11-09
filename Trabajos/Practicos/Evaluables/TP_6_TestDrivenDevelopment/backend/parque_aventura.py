@@ -4,6 +4,7 @@ from .db.database import buscar_usuario_por_email, obtener_conexion, crear_tabla
 import customtkinter as ctk
 from calendar import monthrange
 
+
 # --- EMAIL / ENV ---
 import smtplib
 import ssl
@@ -23,11 +24,11 @@ ctk.set_default_color_theme("blue")
 
 class ConfiguracionParque:
     """Centraliza las reglas y valores del parque para fácil mantenimiento."""
-    DIAS_ABIERTOS = [0, 1, 2, 3, 4,
-                     5]  # Lunes a Sábado (Domingo = 6, está cerrado)
+    DIAS_ABIERTOS = [1, 2, 3, 4,
+                     5, 6]  # Martes a Domingo (Lunes = 0, está cerrado)
     PRECIOS = {
-        "regular": 10000,
-        "VIP": 15000
+        "regular": 5000,
+        "VIP": 10000
     }
     CANTIDAD_MAX_ENTRADAS = 10
     CANTIDAD_MIN_ENTRADAS = 1
@@ -88,8 +89,12 @@ class Compra:
             self.errores.append("Debe indicar la edad de cada visitante.")
             return
 
-        if any(e <= 0 for e in self.edades):
-            self.errores.append("Edad inválida: todas deben ser mayores a 0.")
+        if any(e < 0 for e in self.edades):
+            self.errores.append("Edad inválida: todas deben ser mayores o igual a 0.")
+
+        if any(e > 110 for e in self.edades):
+            self.errores.append("Edad inválida: todas deben ser menores a 110.")
+
 
     def _validar_forma_pago(self):
         if self.forma_pago not in ["efectivo", "tarjeta"]:
@@ -118,7 +123,7 @@ class Compra:
         total = self.calcular_monto_total()
         mensaje = (f"🎟️ Compra confirmada\n" f"- Usuario: {self.usuario.email}\n"f"- Cantidad de entradas: {self.cantidad}\n"f"- Fecha de visita: {self.fecha_visita.strftime('%d/%m/%Y')}\n"f"- Precio total: ${total}\n"f"- Forma de pago: {self.forma_pago.capitalize()}\n")
         
-        if self.forma_pago == "tarjeta":
+        if self.forma_pago and self.forma_pago.strip().lower() == "tarjeta":
             mensaje += " Redirigiendo a Mercado Pago..."
         else:
             mensaje += " Pago en boletería."
@@ -158,5 +163,3 @@ def enviar_correo_confirmacion(cuerpo_mensaje, destinatario_email):
         smtp.login(EMAIL_EMISOR, PASSWORD_EMISOR)
         smtp.send_message(msg)
     return True
-
-
