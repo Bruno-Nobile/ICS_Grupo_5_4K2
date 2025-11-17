@@ -45,19 +45,19 @@ Repositorio para control de versiones de los ítems de configuración para la c�
 
 ## Listado de ítems de configuración
 
-| Nombre del Ítem de Configuración              | Regla de Nombrado                                 | Ubicación                                                               |
-| --------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------- | --- |
-| Diapositivas                                  | [Número_Diapositiva]\_[Tema_Diapositiva].[pdf]    | ICS*Grupo_5_4K2/Unidades/U[Número_Unidad]*[Nombre_Unidad]/Diapositivas  |
-| Apuntes de clase                              | [DDMM].[docx/pdf/jpg]                             | ICS*Grupo_5_4K2/Unidades/U[Número_Unidad]*[Nombre_Unidad]/Apuntes_Clase |
-| Trabajos conceptuales                         | TP*conceptual*[Numero_TP]\_[Titulo_TP].[pdf/xslx] | ICS_Grupo_5_4K2/Trabajos/Conceptuales                                   |
-| Trabajos prácticos evaluables                 | TP*[Numero_TP]*[Titulo_TP].[pdf/xslx]             | ICS_Grupo_5_4K2/Trabajos/Practicos                                      |
-| Modalidad                                     | Modalidad\_[Año].[pdf]                            | ICS_Grupo_5_4K2/Planificación                                           |     |
-| Cronograma                                    | Cronograma*clases*[Curso].[xslx]                  | ICS_Grupo_5_4K2/Planificación                                           |
-| Bibliografía                                  | [Nombre_Bibliografia].[pdf]                       | ICS_Grupo_5_4K2/Materiales/Bibliografía                                 |
-| Clases Grabadas                               | Clase\_[Tema_Clase].[txt]                         | ICS_Grupo_5_4K2/Materiales/Clases_grabadas                              |
-| Lineamientos para trabajos conceptuales       | Lineamientos_TP_conceptuales.[pdf]                | ICS_Grupo_5_4K2/Trabajos/Conceptuales                                   |
-| Lineamientos de trabajos prácticos evaluables | Lineamientos_TP_practicos.[pdf]                   | ICS_Grupo_5_4K2/Trabajos/Prácticos                                      |
-| Guía de Trabajos Prácticos Resueltos          | Guia_TP_resueltos.[pdf]                           | ICS_Grupo_5_4K2/Materiales                                              |
+| Nombre del Ítem de Configuración      | Regla de Nombrado                                      | Ubicación                                        |
+|---------------------------------------|--------------------------------------------------------|--------------------------------------------------------|
+| Diapositivas                          | [Número_Diapositiva]_[Tema_Diapositiva].[pdf]          | ICS_Grupo_5_4K2/Unidades/U[Número_Unidad]_[Nombre_Unidad]/Diapositivas          |                                    
+| Apuntes de clase                      | [DDMM].[docx/pdf/jpg]                                  | ICS_Grupo_5_4K2/Unidades/U[Número_Unidad]_[Nombre_Unidad]/Apuntes_Clase         |
+| Trabajos conceptuales                 | TP_conceptual_[Numero_TP]_[Titulo_TP].[pdf/xslx]       | ICS_Grupo_5_4K2/Trabajos/Conceptuales    |
+| Trabajos prácticos evaluables         |TP_[Numero_TP]_[Titulo_TP].[pdf/xslx]                   | ICS_Grupo_5_4K2/Trabajos/Practicos                          |
+| Modalidad                             |Modalidad_[Año].[pdf]                                   | ICS_Grupo_5_4K2/Planificación                          |                        |
+| Cronograma                            | Cronograma_clases_[Curso].[xslx]                       | ICS_Grupo_5_4K2/Planificación                                              |
+| Bibliografía                          | [Nombre_Bibliografia].[pdf]                            | ICS_Grupo_5_4K2/Materiales/Bibliografía                       |
+| Clases Grabadas                       | Clase_[Tema_Clase].[txt]                               | ICS_Grupo_5_4K2/Materiales/Clases_grabadas                    |
+| Lineamientos para trabajos conceptuales     | Lineamientos_TP_conceptuales.[pdf]               | ICS_Grupo_5_4K2/Trabajos/Conceptuales                  |
+| Lineamientos de trabajos prácticos evaluables   | Lineamientos_TP_practicos.[pdf]              | ICS_Grupo_5_4K2/Trabajos/Prácticos                   |
+| Guía de Trabajos Prácticos Resueltos  | Guia_TP_resueltos.[pdf]                                | ICS_Grupo_5_4K2/Materiales |
 
 ## Glosario
 
