@@ -33,11 +33,11 @@ Repositorio para control de versiones de los ítems de configuración para la c�
       ├── Hechos_en_Clase
 ├── Materiales
    ├── Bibliografía
-      ├── Ingenieria_De_Software
+      ├── Ingenieria_de_Software
       ├── TDD
       ├── Lean_Kanban
       ├── SCM
-      ├── Testing
+      ├── Pensamiento_ágil
       ├── Testing_de_software
    ├── Clases Grabadas
 ├── Planificación
