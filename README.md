@@ -50,7 +50,8 @@ Repositorio para control de versiones de los ítems de configuración para la c�
 | Diapositivas                          | [Número_Diapositiva]_[Tema_Diapositiva].[pdf]          | ICS_Grupo_5_4K2/Unidades/U[Número_Unidad]_[Nombre_Unidad]/Diapositivas          |                                    
 | Apuntes de clase                      | [DDMM].[docx/pdf/jpg]                                  | ICS_Grupo_5_4K2/Unidades/U[Número_Unidad]_[Nombre_Unidad]/Apuntes_Clase         |
 | Trabajos conceptuales                 | TP_conceptual_[Numero_TP]_[Titulo_TP].[pdf/xslx]       | ICS_Grupo_5_4K2/Trabajos/Conceptuales    |
-| Trabajos prácticos evaluables         |TP_[Numero_TP]_[Titulo_TP].[pdf/xslx]                   | ICS_Grupo_5_4K2/Trabajos/Practicos                          |
+| Trabajos prácticos evaluables         |TP_[Numero_TP]_[Titulo_TP].[pdf/xslx]                   | ICS_Grupo_5_4K2/Trabajos/Practicos/Evaluables                         |
+| Trabajos hechos en clase              |Caso_Práctico_[Numero_Caso]_[Nombre Caso].[pdf/xslx]    | ICS_Grupo_5_4K2/Trabajos/Practicos/Hechos_en_clase                         |
 | Modalidad                             |Modalidad_[Año].[pdf]                                   | ICS_Grupo_5_4K2/Planificación                          |                        |
 | Cronograma                            | Cronograma_clases_[Curso].[xslx]                       | ICS_Grupo_5_4K2/Planificación                                              |
 | Bibliografía                          | [Nombre_Bibliografia].[pdf]                            | ICS_Grupo_5_4K2/Materiales/Bibliografía                       |
